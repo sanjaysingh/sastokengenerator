@@ -12,11 +12,11 @@
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="index.html">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+
+    <Content Include="index.html" Link="SasTokenGenerator\index.html" CopyToPublishDirectory="PreserveNewest" />
+    
+    <!--<None Update="index.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>-->
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(ProjectDir)index.html $(TargetDir)SasTokenGenerator\ /Y /R /C" />
-  </Target>
 </Project>
