@@ -21,7 +21,7 @@ namespace SasTokenGenerator
         /// <param name="log">log writer</param>
         /// <returns>http response</returns>
         [FunctionName("SasTokenGenerator")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]HttpRequestMessage req, TraceWriter log, ExecutionContext context)
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "")]HttpRequestMessage req, TraceWriter log, ExecutionContext context)
         {
             log.Info("C# HTTP trigger function processing a request.");
 
